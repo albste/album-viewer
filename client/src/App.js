@@ -11,7 +11,8 @@ function App() {
 
     var config = {
       method: 'get',
-      url: 'http://localhost:3001/api'
+      url: '/api'
+      // url: 'http://localhost:3001/api'
     };
     
     axios(config)

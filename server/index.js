@@ -5,9 +5,9 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-var cors = require('cors')
+// var cors = require('cors')
 
-app.use(cors())
+// app.use(cors())
 
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));

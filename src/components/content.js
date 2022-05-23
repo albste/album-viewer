@@ -110,7 +110,7 @@ export default function Content() {
     useEffect(() => {
 
         axios
-            .get("http://jsonplaceholder.typicode.com/albums")
+            .get("https://jsonplaceholder.typicode.com/albums")
             .then(resp => resp.data)
             .then(data => {
                 setalbums(data);
@@ -118,7 +118,7 @@ export default function Content() {
             })
             .then(
                 axios
-                    .get("http://jsonplaceholder.typicode.com/photos")
+                    .get("https://jsonplaceholder.typicode.com/photos")
                     .then(resp => resp.data)
                     .then(data => {
                         setphotos(data);

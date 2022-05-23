@@ -4,7 +4,7 @@ A simple React application that shows the result of RESTful Api calls.
  
 ## Live Application URL
 
-The Application is deployed in 
+The Application is deployed in https://albste.github.io/album-viewer/
 
 Click on the link to see the application
 

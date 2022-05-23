@@ -17,7 +17,7 @@
     "save-dev": "^0.0.1-security",
     "styled-components": "^5.3.5",
     "swagger-ui-react": "^4.11.1"
-  },
+  }, 
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

@@ -1,10 +1,11 @@
 # Album Viewer
 A simple React application that shows the result of RESTful Api calls.
- 
- 
+The backend side was written with Node. For the frontend side was used React.
+
+
 ## Live Application URL
 
-The Application is deployed in https://albste.github.io/album-viewer/
+The Application is deployed in https://album-viewer.herokuapp.com/
 
 Click on the link to see the application
 
@@ -29,15 +30,23 @@ Install all the npm packages. Go into the project folder and type the following 
 
 ```bash
 npm install
+cd client && npm install
 ```
 
-In order to run the application Type the following command
+In order to run the server backend application Type the following command
 
 ```bash
 npm start
 ```
 
-The Application Runs on **localhost:3000**
+In order to run the client frontend application Type the following command
+
+```bash
+cd client && npm start
+```
+
+The Backend Runs on **localhost:3001**
+The Frontend Runs on **localhost:3000**
 
 
 ## Application design

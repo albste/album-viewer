@@ -1,37 +1,75 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import CssBaseline from '@mui/material/CssBaseline';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Slide from '@mui/material/Slide';
+import Content from './components/content';
 
-function App() {
-  const [data, setData] = React.useState(null);
 
-  React.useEffect(() => {
-
-    var axios = require('axios');
-
-    var config = {
-      method: 'get',
-      url: '/api'
-      // url: 'http://localhost:3001/api'
-    };
-    
-    axios(config)
-    .then(function (response) {
-      setData(JSON.stringify(response.data.message));
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }, []);
-
+function HideOnScroll(props) {
+  const { children, window } = props;
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
-    </div>
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+
+HideOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  window: PropTypes.func,
+};
+
+// export default function App() {
+
+//     return (
+//         <React.Fragment>
+//             <CssBaseline />
+//             <HideOnScroll>
+//                 <AppBar>
+//                     <Toolbar>
+//                         <Typography variant="h6" component="div"> Albums </Typography>
+//                     </Toolbar>
+//                 </AppBar>
+//             </HideOnScroll>
+//             <Toolbar />
+//             <Container>                
+//                 <Box sx={{ my: 2 }}>
+//                     <Content/>
+//                 </Box>
+//             </Container>
+//         </React.Fragment>
+//     );
+// }
+
+function App() {
+
+  return (
+        <React.Fragment>
+            <CssBaseline />
+            <HideOnScroll>
+                <AppBar>
+                    <Toolbar>
+                        <Typography variant="h6" component="div"> Albums </Typography>
+                    </Toolbar>
+                </AppBar>
+            </HideOnScroll>
+            <Toolbar />
+            <Container>                
+                <Box sx={{ my: 2 }}>
+                    <Content/>
+                </Box>
+            </Container>
+        </React.Fragment>
   );
 }
 

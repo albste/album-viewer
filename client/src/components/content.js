@@ -35,8 +35,8 @@ export default function Content() {
     const handleChangeSelectedUser = (event) => {
         setSelectedUser(event.target.value);
         axios
-            .get('/selectuser', { params: { userid: event.target.value } }) //FOR HEROKU PUBLISH ONLY
-            // .get('http://localhost:3001/selectuser', { params: { userid: event.target.value } })
+            // .get('/selectuser', { params: { userid: event.target.value } }) //FOR HEROKU PUBLISH ONLY
+            .get('http://localhost:3001/selectuser', { params: { userid: event.target.value } })
             .then(function (response) { setAlbums(response.data.message); })
             .catch(function (error) { console.log(error); });;
     };
@@ -47,14 +47,14 @@ export default function Content() {
 
         var configGetAlbums = {
             method: 'get',
-            url: '/albums'  //FOR HEROKU PUBLISH ONLY
-            // url: 'http://localhost:3001/albums'
+            // url: '/albums'  //FOR HEROKU PUBLISH ONLY
+            url: 'http://localhost:3001/albums'
         };
 
         var configGetUsers = {
             method: 'get',
-            url: '/users'  //FOR HEROKU PUBLISH ONLY
-            // url: 'http://localhost:3001/users'
+            // url: '/users'  //FOR HEROKU PUBLISH ONLY
+            url: 'http://localhost:3001/users'
         };
 
         axios(configGetAlbums)

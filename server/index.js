@@ -9,7 +9,7 @@ app.use(cors())
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-// Handle GET requests to /api route
+// Return all full albums (with their photos)
 app.get("/albums", (req, res) => {
  
     let albums = [];
@@ -19,10 +19,7 @@ app.get("/albums", (req, res) => {
         .get("https://jsonplaceholder.typicode.com/albums")
         .then(resp => resp.data)
         .then(data => {
-            albums = data;
-
-            // res.json({ message: albums });
-            // console.log(albums);
+            albums = data; 
         })
         .then(
             axios
@@ -41,12 +38,11 @@ app.get("/albums", (req, res) => {
                     })}
 
                     res.json({ message: albums });
-
-                    // console.log(albums);
                 })
         ); 
 });
 
+// Return all users id and an 'All' option
 app.get("/users", (req, res) => {
  
     let usersId = [];
@@ -63,10 +59,10 @@ app.get("/users", (req, res) => {
             })}
 
             res.json({ message: usersId });
-            // console.log(usersId);
         });
 });
 
+// Return the full album of a selected user (with their photos)
 app.get("/selectuser", (req, res) => {
  
     let sortedalbums = [];
@@ -77,10 +73,7 @@ app.get("/selectuser", (req, res) => {
         .get("https://jsonplaceholder.typicode.com/albums")
         .then(resp => resp.data)
         .then(data => {
-            albums = data;
-
-            // res.json({ message: albums });
-            // console.log(albums);
+            albums = data; 
         })
         .then(
             axios
@@ -104,15 +97,11 @@ app.get("/selectuser", (req, res) => {
                                 sortedalbums.push(album);
                     })}
                     res.json({ message: sortedalbums });
-
-                    // console.log(albums);
                 })
         ); 
-           // console.log(req.query.userid.toString());
- 
 });
 
-// All other GET requests not handled before will return our React app
+// All other GET requests not handled before will return the React app
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });

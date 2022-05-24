@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Slide from '@mui/material/Slide';
 import Content from './components/content';
+import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 
 
 function HideOnScroll(props) {
@@ -28,29 +29,7 @@ HideOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
   window: PropTypes.func,
 };
-
-// export default function App() {
-
-//     return (
-//         <React.Fragment>
-//             <CssBaseline />
-//             <HideOnScroll>
-//                 <AppBar>
-//                     <Toolbar>
-//                         <Typography variant="h6" component="div"> Albums </Typography>
-//                     </Toolbar>
-//                 </AppBar>
-//             </HideOnScroll>
-//             <Toolbar />
-//             <Container>                
-//                 <Box sx={{ my: 2 }}>
-//                     <Content/>
-//                 </Box>
-//             </Container>
-//         </React.Fragment>
-//     );
-// }
-
+ 
 function App() {
 
   return (
@@ -59,7 +38,8 @@ function App() {
             <HideOnScroll>
                 <AppBar>
                     <Toolbar>
-                        <Typography variant="h6" component="div"> Albums </Typography>
+                      <PhotoLibraryIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                      <Typography variant="h6" component="div"> Albums </Typography>
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>

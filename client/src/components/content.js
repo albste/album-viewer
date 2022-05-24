@@ -35,8 +35,8 @@ export default function Content() {
     const handleChangeSelectedUser = (event) => {
         setSelectedUser(event.target.value);
         axios
-            // .get('/selectuser', { params: { userid: event.target.value } }) //FOR HEROKU PUBLISH ONLY
-            .get('http://localhost:3001/selectuser', { params: { userid: event.target.value } })
+            // .get('/albumsfiltered', { params: { userid: event.target.value } }) //FOR HEROKU PUBLISH ONLY
+            .get('http://localhost:3001/albumsfiltered', { params: { userid: event.target.value } })
             .then(function (response) { setAlbums(response.data.message); })
             .catch(function (error) { console.log(error); });;
     };

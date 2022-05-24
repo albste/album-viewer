@@ -59,3 +59,8 @@ The Frontend Runs on **localhost:3000**
 #### HTTP client
 
 **axios** library is used to make HTTP Calls
+
+
+## Documentation
+
+https://app.swaggerhub.com/apis-docs/albste95/album-viewer/1.0.0

@@ -24,5 +24,7 @@ yarn-error.log*
 
 .vscode
 /client/node_modules/*
-/logs
-/logs/*
+/server/logs
+/server/logs/*
+/client/logs
+/client/logs/*

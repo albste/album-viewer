@@ -1,1 +1,9 @@
 info: May-25-2022 10:32:34: 	Server logger started
+info: May-25-2022 10:44:36: 	GET request received: /albums
+info: May-25-2022 10:44:36: 	GET request received: /users
+info: May-25-2022 10:44:36: 	GET request received: /users
+info: May-25-2022 10:44:37: 	GET request received: /albums
+info: May-25-2022 10:44:37: 	GET request received: /albums
+info: May-25-2022 10:44:37: 	GET request received: /users
+info: May-25-2022 10:44:37: 	GET request received: /users
+info: May-25-2022 10:44:38: 	GET request received: /albums

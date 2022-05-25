@@ -20,6 +20,9 @@ import Select from '@mui/material/Select';
 
 export default function Content() {
 
+    // const logger = require('../logger.js');
+    // logger.info('Client logger started');
+    
     //State vars
     const [albums, setAlbums] = useState([]);
     const [users, setUsers] = useState([]);
@@ -37,13 +40,20 @@ export default function Content() {
         axios
             // .get('/albumsfiltered', { params: { userid: event.target.value } }) //FOR HEROKU PUBLISH ONLY
             .get('http://localhost:3001/albumsfiltered', { params: { userid: event.target.value } })
-            .then(function (response) { setAlbums(response.data.message); })
-            .catch(function (error) { console.log(error); });;
+            .then(function (response) {
+                setAlbums(response.data.message);
+                // logger.info('GET response received: /albumsfiltered');
+            })
+            .catch(function (error) {
+                console.log(error);
+                // logger.info('GET response error: /albumsfiltered - ' + error);
+            });;
     };
 
 
     //Runs once
     useEffect(() => {
+        // const logger = require('../logger.js');
 
         var configGetAlbums = {
             method: 'get',
@@ -58,12 +68,24 @@ export default function Content() {
         };
 
         axios(configGetAlbums)
-            .then(function (response) { setAlbums(response.data.message); })
-            .catch(function (error) { console.log(error); });
+            .then(function (response) {
+                setAlbums(response.data.message);
+                // logger.info('GET response received: /albums');
+            })
+            .catch(function (error) {
+                console.log(error);
+                // logger.info('GET response error: /albums - ' + error);
+            });
 
         axios(configGetUsers)
-            .then(function (response) { setUsers(response.data.message); })
-            .catch(function (error) { console.log(error); });
+            .then(function (response) {
+                setUsers(response.data.message);
+                // logger.info('GET response received: /users');
+            })
+            .catch(function (error) {
+                console.log(error);
+                // logger.info('GET response error: /users - ' + error);
+            });
 
     }, []);
 

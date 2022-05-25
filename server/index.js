@@ -6,6 +6,9 @@ const app = express();
 const mysql = require('mysql2');
 var cors = require('cors')
 
+const logger = require('./logger.js');
+logger.info('Server logger started');
+
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
@@ -23,6 +26,8 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 // Return all full albums (with their photos)
 app.get("/albums", (req, res) => {
+ 
+    logger.info('GET request received: /albums');
 
     let albums = [];
     let photos = [];
@@ -60,6 +65,8 @@ app.get("/albums", (req, res) => {
 
 // Return the full album of a selected user (with their photos)
 app.get("/albumsfiltered", (req, res) => {
+
+    logger.info('GET request received: /albumsfiltered , params { userid: ' + req.query.userid + ' }');
 
     let sortedalbums = [];
     let albums = [];
@@ -105,6 +112,8 @@ app.get("/albumsfiltered", (req, res) => {
 
 // Return all users id and an 'All' option
 app.get("/users", (req, res) => {
+ 
+    logger.info('GET request received: /users');
 
     let usersId = [];
 

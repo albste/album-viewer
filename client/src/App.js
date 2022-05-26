@@ -15,9 +15,6 @@ import Main from './components/view/main';
 
 function App() {
 
-  // const logger = require('./logger.js');
-  // logger.info('Server logger started');
-
   //State vars
   const [albums, setAlbums] = useState([]);
   const allAlbums = useAllAlbums();

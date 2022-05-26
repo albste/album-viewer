@@ -9,7 +9,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd client && npm install && npm run build"
+    "build": "cd client && npm install && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",

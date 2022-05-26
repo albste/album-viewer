@@ -1,22 +1,15 @@
 {
-  "files": {
-    "main.css": "/album-viewer/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/album-viewer/static/js/main.ece977f8.chunk.js",
-    "main.js.map": "/album-viewer/static/js/main.ece977f8.chunk.js.map",
-    "runtime-main.js": "/album-viewer/static/js/runtime-main.c12fc95b.js",
-    "runtime-main.js.map": "/album-viewer/static/js/runtime-main.c12fc95b.js.map",
-    "static/js/2.23897614.chunk.js": "/album-viewer/static/js/2.23897614.chunk.js",
-    "static/js/2.23897614.chunk.js.map": "/album-viewer/static/js/2.23897614.chunk.js.map",
-    "static/js/3.97c140cd.chunk.js": "/album-viewer/static/js/3.97c140cd.chunk.js",
-    "static/js/3.97c140cd.chunk.js.map": "/album-viewer/static/js/3.97c140cd.chunk.js.map",
-    "index.html": "/album-viewer/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/album-viewer/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.23897614.chunk.js.LICENSE.txt": "/album-viewer/static/js/2.23897614.chunk.js.LICENSE.txt"
-  },
-  "entrypoints": [
-    "static/js/runtime-main.c12fc95b.js",
-    "static/js/2.23897614.chunk.js",
-    "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.ece977f8.chunk.js"
-  ]
+  "main.css": "/album-viewer/static/css/main.afef5b9e.chunk.css",
+  "main.js": "/album-viewer/static/js/main.51ff02f6.chunk.js",
+  "main.js.map": "/album-viewer/static/js/main.51ff02f6.chunk.js.map",
+  "static/js/1.c41c1c1a.chunk.js": "/album-viewer/static/js/1.c41c1c1a.chunk.js",
+  "static/js/1.c41c1c1a.chunk.js.map": "/album-viewer/static/js/1.c41c1c1a.chunk.js.map",
+  "static/js/2.4674cd77.chunk.js": "/album-viewer/static/js/2.4674cd77.chunk.js",
+  "static/js/2.4674cd77.chunk.js.map": "/album-viewer/static/js/2.4674cd77.chunk.js.map",
+  "runtime~main.js": "/album-viewer/static/js/runtime~main.4565a965.js",
+  "runtime~main.js.map": "/album-viewer/static/js/runtime~main.4565a965.js.map",
+  "static/css/main.afef5b9e.chunk.css.map": "/album-viewer/static/css/main.afef5b9e.chunk.css.map",
+  "index.html": "/album-viewer/index.html",
+  "precache-manifest.387bc401a9ef63c4dcfe5324c95aff16.js": "/album-viewer/precache-manifest.387bc401a9ef63c4dcfe5324c95aff16.js",
+  "service-worker.js": "/album-viewer/service-worker.js"
 }

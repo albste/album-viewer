@@ -22,6 +22,7 @@ Install create-react-app npm package globally. This will help to easily run the 
 npm install -g create-react-app
 ```
 
+
 ## Cloning and Running the Application in local
 
 Clone the project into local
@@ -47,6 +48,35 @@ cd client && npm start
 
 The Backend Runs on **localhost:3001**
 The Frontend Runs on **localhost:3000**
+
+
+## API
+
+The implemented API are:
+
+**'/albums'**
+Return all full albums (with their photos)
+
+**'/albumsfiltered'**
+Return the full albums of a selected user (with their photos)
+
+**'/users'**
+Return all users id and an All option
+
+
+## Testing API
+
+From the root of the project execute the following command to start server
+
+```bash
+npm start
+```
+
+For test all API run:
+
+```bash
+mocha
+```
 
 
 ## Application design

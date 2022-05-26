@@ -67,6 +67,7 @@ Return all users id and an All option
 The calls results are retrived from the following urls:
 
 **https://jsonplaceholder.typicode.com/albums**
+
 **https://jsonplaceholder.typicode.com/photos**
 
 

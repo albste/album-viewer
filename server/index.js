@@ -22,7 +22,7 @@ const db = mysql.createPool({
 })
 
 // Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+app.use(express.static(path.resolve(__dirname, '../client/public')));
 
 // Return all full albums (with their photos)
 app.get(module.API_URL_ALBUMS, (req, res) => {

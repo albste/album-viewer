@@ -2,7 +2,7 @@
 const API_URL_ALBUMS = '/albums';
 const API_URL_USERS = '/users';
 const API_URL_ALBUMSFILTERED = '/albumsfiltered';
- 
+
 //Development 
 // const API_URL_ALBUMS = 'http://localhost:3001/albums';
 // const API_URL_USERS = 'http://localhost:3001/users';

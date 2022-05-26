@@ -64,6 +64,12 @@ Return the full albums of a selected user (with their photos)
 Return all users id and an All option
 
 
+The calls results are retrived from the following urls:
+
+**https://jsonplaceholder.typicode.com/albums**
+**https://jsonplaceholder.typicode.com/photos**
+
+
 ## Testing API
 
 From the root of the project execute the following command to start server

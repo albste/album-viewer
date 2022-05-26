@@ -22,7 +22,7 @@ const db = mysql.createPool({
 })
 
 // Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, '../client/public')));
+app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 // Return all full albums (with their photos)
 app.get(module.API_URL_ALBUMS, (req, res) => {
@@ -138,9 +138,9 @@ app.get(module.API_URL_USERS, (req, res) => {
 });
 
 // All other GET requests not handled before will return the React app
-// app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-// });
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+});
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);

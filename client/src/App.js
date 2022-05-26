@@ -1,55 +1,69 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Slide from '@mui/material/Slide';
-import Content from './components/content';
-import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
+import AppBar from './components/general/appBar';
+import axios from "axios";
+import { useState } from "react";
+import { useEffect } from 'react';
+import { useAllAlbums } from './hooks/useAllAlbums';
+import { useAllUsers } from './hooks/useAllUsers';
+import {API_URL_ALBUMSFILTERED} from './utils/module';
+import Main from './components/view/main';
 
 
-function HideOnScroll(props) {
-  const { children, window } = props;
-  const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
-  });
-
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children}
-    </Slide>
-  );
-}
-
-HideOnScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-  window: PropTypes.func,
-};
- 
 function App() {
 
+  // const logger = require('./logger.js');
+  // logger.info('Server logger started');
+
+  //State vars
+  const [albums, setAlbums] = useState([]);
+  const allAlbums = useAllAlbums();
+
+  const [users, setUsers] = useState([]);
+  const allUsers = useAllUsers();
+
+  const [searchText, setSearchText] = useState('');
+  const [selectedUser, setSelectedUser] = useState('');
+ 
+  //Handle Changes
+  const handleChangeSearchText = (event) => {
+    setSearchText(event.target.value);
+  };
+
+  const handleChangeSelectedUser = (event) => {
+    setSelectedUser(event.target.value);
+    axios
+      .get(API_URL_ALBUMSFILTERED, { params: { userid: event.target.value } })
+      .then(function (response) {
+        setAlbums(response.data.message);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });;
+  };
+
+
+  //Runs once
+  useEffect(() => {
+    setAlbums(allAlbums);
+    setUsers(allUsers);
+  }, [allAlbums, allUsers]);
+
   return (
-        <React.Fragment>
-            <CssBaseline />
-            <HideOnScroll>
-                <AppBar>
-                    <Toolbar>
-                      <PhotoLibraryIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-                      <Typography variant="h6" component="div"> Albums </Typography>
-                    </Toolbar>
-                </AppBar>
-            </HideOnScroll>
-            <Toolbar />
-            <Container>                
-                <Box sx={{ my: 2 }}>
-                    <Content/>
-                </Box>
-            </Container>
-        </React.Fragment>
+    <React.Fragment>
+      <CssBaseline />
+      <AppBar />
+      <Toolbar />
+      <Container>
+        <Box sx={{ my: 2 }}>
+          <Main albums={albums} users={users} searchText={searchText} selectedUser={selectedUser}
+            handleChangeSearchText={handleChangeSearchText} handleChangeSelectedUser={handleChangeSelectedUser}/>
+        </Box>
+      </Container>
+    </React.Fragment>
   );
 }
 

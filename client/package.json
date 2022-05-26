@@ -18,7 +18,9 @@
     "react-scripts": "4.0.3",
     "save-dev": "^0.0.1-security",
     "web-vitals": "^2.1.4",
-    "winston-daily-rotate-file": "^4.6.1"
+    "winston": "^3.7.2",
+    "winston-daily-rotate-file": "^4.6.1",
+    "winston-react": "^1.0.0-RC.0"
   },
   "proxy": "http://localhost:3001/api",
   "scripts": {

@@ -66,7 +66,9 @@ app.get(module.API_URL_ALBUMS, (req, res) => {
 // Return the full album of a selected user (with their photos)
 app.get(module.API_URL_ALBUMSFILTERED, (req, res) => {
 
-    logger.info('GET request received: /albumsfiltered , params { userid: ' + req.query.userid + ' }');
+    const userid = req.query.userid?.toString() || '';
+
+    logger.info('GET request received: /albumsfiltered , params { userid: ' + userid + ' }');
 
     let sortedalbums = [];
     let albums = [];
@@ -99,8 +101,9 @@ app.get(module.API_URL_ALBUMSFILTERED, (req, res) => {
                     }
 
                     {
+                        
                         albums.map(album => {
-                            if (req.query.userid.toString() === "All" || album.userId.toString() === req.query.userid.toString())
+                            if (userid === "All" || album.userId.toString() === userid)
                                 if (sortedalbums.indexOf(album) === -1)
                                     sortedalbums.push(album);
                         })

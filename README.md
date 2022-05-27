@@ -52,7 +52,7 @@ The Frontend Runs on **localhost:3000**
 
 ## API
 
-The implemented API are:
+-The implemented API are:
 
 **'/albums'**
 Return all full albums (with their photos)
@@ -64,11 +64,11 @@ Return the full albums of a selected user (with their photos)
 Return all users id and an All option
 
 
-The calls results are retrived from the following urls:
+-The calls results are retrived from the following urls:
 
-**https://jsonplaceholder.typicode.com/albums**
+https://jsonplaceholder.typicode.com/albums
 
-**https://jsonplaceholder.typicode.com/photos**
+https://jsonplaceholder.typicode.com/photos
 
 
 ## Testing API
